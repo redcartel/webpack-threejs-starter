@@ -1,16 +1,15 @@
 /* typescript & three.js weback & babel starter - Carter Adams 2020 */
 
 let testMsg: string;
-testMsg = "Hello Typescript";
+testMsg = "main.ts start (Hello Typescript)";
 console.log(testMsg);
 
 import * as T from "three";
 import Stats from "stats.js";
 import settings from "./static/settings.json";
 
-console.log("Loaded")
-
 function main() {
+  console.log("main start");
   /* executed in ./static/index.js */
   let renderer = new T.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -39,10 +38,10 @@ function main() {
   scene.add(spotlight);
 
   // Camera
-  let fov = 75
+  let fov = 75;
   let aspect = window.innerWidth / window.innerHeight;
-  let near = 0.1
-  let far = 1000
+  let near = 0.1;
+  let far = 1000;
   let camera = new T.PerspectiveCamera(fov, aspect, near, far);
   let cZ = 5;
   camera.position.z = cZ;
@@ -65,6 +64,8 @@ function main() {
     camera.position.z = cZ;
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
+  console.log("main end");
 }
 
+console.log("main.ts end");
 export default main;
